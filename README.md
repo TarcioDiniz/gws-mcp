@@ -12,10 +12,10 @@ a e-mail corporativo.
 
 | Serviço | Ferramentas | Testado com conta real |
 |---|---|---|
-| Contas | `accounts_list`, `accounts_add`, `accounts_remove` | ainda não |
-| Gmail | `gmail_search`, `gmail_get_message`, `gmail_list_labels` | ainda não |
-| Calendar | `calendar_list_events`, `calendar_free_busy` | ainda não |
-| Drive | `drive_search`, `drive_read_file` | ainda não |
+| Contas | `accounts_list`, `accounts_add`, `accounts_remove` | sim, 2026-09-04 (`accounts_remove` só em teste unitário) |
+| Gmail | `gmail_search`, `gmail_get_message`, `gmail_list_labels` | sim, 2026-09-04 |
+| Calendar | `calendar_list_events`, `calendar_free_busy` | sim, 2026-09-04 (agenda vazia no período) |
+| Drive | `drive_search`, `drive_read_file` | sim, 2026-09-04 (Sheets exportado como CSV) |
 
 Ainda não existe: Docs, Sheets, qualquer escrita (enviar e-mail, criar evento,
 editar planilha). Os escopos OAuth pedidos são só `*.readonly`; o servidor não
@@ -32,6 +32,17 @@ tem como alterar nada no Google mesmo que uma ferramenta tentasse.
 
 Nada de token em arquivo de texto, em log ou em mensagem de erro. Nenhuma
 telemetria. O servidor só fala com `googleapis.com` e `accounts.google.com`.
+
+## Estado do setup nesta máquina
+
+Feito em 2026-09-04: projeto `gws-mcp-507701` na conta pessoal, três APIs
+ativas, consentimento Externo em modo Testing, cliente Desktop criado, perfil
+`pessoal` autorizado. Registrado no Claude Code com `--scope local` na pasta
+`robo`.
+
+Armadilha encontrada: o botão "Salvar" de usuários de teste no console só
+funcionou na segunda tentativa. Sem o e-mail na lista, o consentimento devolve
+`Erro 403: access_denied`.
 
 ## Setup (uma vez)
 

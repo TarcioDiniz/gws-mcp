@@ -12,7 +12,7 @@ a e-mail corporativo.
 
 | Serviço | Ferramentas | Testado com conta real |
 |---|---|---|
-| Contas | `accounts_list`, `accounts_add`, `accounts_remove` | sim, 2026-09-04 (`accounts_remove` só em teste unitário) |
+| Contas | `accounts_list`, `accounts_add`, `accounts_remove` | sim, 2026-09-04, dois perfis (`accounts_remove` só em teste unitário) |
 | Gmail | `gmail_search`, `gmail_get_message`, `gmail_list_labels` | sim, 2026-09-04 |
 | Calendar | `calendar_list_events`, `calendar_free_busy` | sim, 2026-09-04 (agenda vazia no período) |
 | Drive | `drive_search`, `drive_read_file` | sim, 2026-09-04 (Sheets exportado como CSV) |
@@ -36,13 +36,18 @@ telemetria. O servidor só fala com `googleapis.com` e `accounts.google.com`.
 ## Estado do setup nesta máquina
 
 Feito em 2026-09-04: projeto `gws-mcp-507701` na conta pessoal, três APIs
-ativas, consentimento Externo em modo Testing, cliente Desktop criado, perfil
-`pessoal` autorizado. Registrado no Claude Code com `--scope local` na pasta
-`robo`.
+ativas, consentimento Externo **publicado (Em produção)**, cliente Desktop,
+perfis `pessoal` e `actionlabs` autorizados e testados. Registrado no Claude
+Code com `--scope local` na pasta `robo`.
 
-Armadilha encontrada: o botão "Salvar" de usuários de teste no console só
-funcionou na segunda tentativa. Sem o e-mail na lista, o consentimento devolve
-`Erro 403: access_denied`.
+Para publicar, o Google exigiu página inicial e política de privacidade
+públicas. Por isso o repositório ficou público e existe o `PRIVACY.md`;
+`github.com` está nos domínios autorizados. Sem verificação do Google a tela
+"app não verificado" aparece no consentimento, e é esperado.
+
+Armadilha: o "Salvar" de usuários de teste no console só gravou na segunda
+tentativa. Sem o e-mail na lista, em modo Testing, o consentimento devolve
+`Erro 403: access_denied`. Em produção a lista deixa de importar.
 
 ## Setup (uma vez)
 

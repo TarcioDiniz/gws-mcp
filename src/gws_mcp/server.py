@@ -72,7 +72,7 @@ def accounts_list() -> dict:
 @safe
 def accounts_add(profile: str) -> dict:
     """Adiciona uma conta Google: abre o navegador para consentimento (somente leitura) e guarda o token no Credential Manager.
-    `profile` e um apelido curto, ex.: 'pessoal', 'actionlabs', 'officecom'."""
+    `profile` e um apelido curto, ex.: 'pessoal', 'trabalho', 'cliente'."""
     email = auth.add_profile(profile)
     return {"profile": profile, "email": email, "status": "adicionada"}
 

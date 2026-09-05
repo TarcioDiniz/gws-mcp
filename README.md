@@ -1,7 +1,7 @@
 # gws-mcp
 
 Servidor MCP local, em Python, para Google Workspace. Multi-conta por desenho:
-cada conta Google é um **perfil nomeado** (`pessoal`, `actionlabs`, `officecom`)
+cada conta Google é um **perfil nomeado** (`pessoal`, `trabalho`, `cliente`)
 e toda ferramenta recebe qual perfil usar.
 
 Feito porque os conectores oficiais do Google são por conta da Claude, não por
@@ -37,7 +37,7 @@ telemetria. O servidor só fala com `googleapis.com` e `accounts.google.com`.
 
 Feito em 2026-09-04: projeto `gws-mcp-507701` na conta pessoal, três APIs
 ativas, consentimento Externo **publicado (Em produção)**, cliente Desktop,
-perfis `pessoal` e `actionlabs` autorizados e testados. Registrado no Claude
+perfis `pessoal` e `trabalho` autorizados e testados. Registrado no Claude
 Code com `--scope local` na pasta `robo`.
 
 Para publicar, o Google exigiu página inicial e política de privacidade
@@ -77,7 +77,7 @@ tentativa. Sem o e-mail na lista, em modo Testing, o consentimento devolve
 
    ```powershell
    uv run gws-mcp accounts add pessoal
-   uv run gws-mcp accounts add actionlabs
+   uv run gws-mcp accounts add trabalho
    uv run gws-mcp accounts list
    ```
 

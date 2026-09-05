@@ -1,0 +1,23 @@
+[project]
+name = "gws-mcp"
+version = "0.1.0"
+description = "Servidor MCP local, multi-conta, para Google Workspace (Gmail, Calendar, Drive)."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.2",
+    "google-api-python-client>=2.150",
+    "google-auth>=2.35",
+    "google-auth-oauthlib>=1.2",
+    "keyring>=25",
+]
+
+[project.scripts]
+gws-mcp = "gws_mcp.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gws_mcp"]

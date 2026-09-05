@@ -1,0 +1,21 @@
+# credenciais / segredos: nunca
+*.json
+!pyproject.toml
+client_secret*
+token*
+*.pem
+.env
+.env.*
+
+# python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# editor / so
+.idea/
+.vscode/
+Thumbs.db
